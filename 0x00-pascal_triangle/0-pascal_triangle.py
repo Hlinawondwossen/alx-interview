@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""
-0-main
-"""
-pascal_triangle = __import__("0-pascal_triangle").pascal_triangle
+"""Triangle Triangle"""
 
 
-def print_triangle(triangle):
-    """
-    Print the triangle
-    """
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
+def pascal_triangle(n):
+    """Triangle"""
+    if n <= 0:
+        return []
+    pas = [[1]]
+    for row_number in range(1, n):
+        row = [1]
+        for j in range(1, row_number):
+            element = pas[row_number - 1][j - 1] + pas[row_number - 1][j]
+            row.append(element)
+        row.append(1)
+        pas.append(row)
 
-
-if __name__ == "__main__":
-    print_triangle(pascal_triangle(5))
+    return pas
