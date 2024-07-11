@@ -1,5 +1,5 @@
-
-dule for 0-minoperations"""
+#!/usr/bin/python3
+""" Module for 0-minoperations"""
 
 
 def minOperations(n):
